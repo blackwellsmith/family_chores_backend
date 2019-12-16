@@ -18,7 +18,8 @@ gem 'puma', '~> 3.11'
 gem 'devise-jwt'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'rspec-rails', groups: [:development, :test]
-
+gem 'fabrication', groups: [:development, :test]
+gem 'faker', groups: [:development, :test] 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
