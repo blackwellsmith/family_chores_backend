@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-Rspec.describe 'POST /signup', type: :request do
+describe 'POST /signup', type: :request do
     let(:url) {'/signup'}
     let(:params) do{
         user: {
@@ -19,6 +19,11 @@ context 'when user is unauthenticated' do
 
     it 'returns a new user' do
        puts response.body 
+    end
+
+    it 'returns a JWT' do
+        puts response.headers['Authorization']
+      expect(response.headers['Authorization']).to be_present  
     end
 end
 
