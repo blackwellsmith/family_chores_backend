@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::API
     respond_to :json
 
+    rescue_from ActiveRecord::RecordNotFound
+
     def render_resource(resource)
         if resource.errors.empty?
           render json: resource
@@ -20,5 +22,17 @@ class ApplicationController < ActionController::API
             }
           ]
         }, status: :bad_request
+      end
+
+      def authorize_owner_resource(resource)
+        raise AuthorizationError.new if resources.user != current_user
+      end
+
+      def unauthorized_error
+        render json: { message: "I don't think so"}, status: 401
+      end
+
+      def not_found
+        render json: { message: "not found"}, status: 404
       end
 end
