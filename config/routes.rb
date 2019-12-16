@@ -15,4 +15,14 @@ Rails.application.routes.draw do
                sessions: 'sessions',
                registrations: 'registrations'
              }
+
+             resources :users do
+              resources :chores
 end
+
+end
+
+
+
+
+
