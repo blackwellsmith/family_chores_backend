@@ -50,11 +50,11 @@ describe 'DELETE /logout', type: :request do
     expect(response).to have_http_status(204)
   end
 
-  let(:user) {Fabricate(:owner)}
+  let(:user) {Fabricate(:user)}
   let(:login_url) { '/login'}
   let(:protected_url) { '/chores'}
   let(:params) do {
-      owner: {
+      user: {
           email: user.email,
           password: user.password
       }
