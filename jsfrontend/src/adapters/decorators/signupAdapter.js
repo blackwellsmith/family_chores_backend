@@ -13,11 +13,14 @@ class SignupAdapter{
         return this.baseAdapter.headers
     }
 
+    
+
     async signup() {
         const res = fetch(`${this.baseURL}/signup`, {
             method: "POST",
             headers: this.headers,
             body: JSON.stringify(params)
         })
+        this.baseAdapter.checkStatus(res)
     }
 }
