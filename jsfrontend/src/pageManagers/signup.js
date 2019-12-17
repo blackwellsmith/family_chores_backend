@@ -1,6 +1,7 @@
 class SignupPage{
-    constructor(container) {
-        this.container = container
+    constructor(container, adapter) {
+      this.container = container
+      this.adapter = new SignupAdapter(adapter)
     }
 
     get staticHTML() {
