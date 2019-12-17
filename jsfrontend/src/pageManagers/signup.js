@@ -1,8 +1,20 @@
-class SignupPage{
-    constructor(container, adapter) {
-      this.container = container
-      this.adapter = new SignupAdapter(adapter)
+class SignupPage extends PageManager{
+
+    initBindingsAndEventListeners() {
+      this.form = this.container.querySelector('#sign-up')
+      
+      this.form.addEventListener('submit', this.handleSubmit.bind(this))
     }
+  
+  handleSubmit(e) {
+    const inputs = e.target.querySelectorAll('input')
+    const name = inputs[0].value
+    const email = inputs[1].value
+    const password = inputs[2].value
+    const [name, email, password] = inputs.map(input => input.value)
+    console.log(name, email, password)
+  }
+    
 
     get staticHTML() {
         return (`
@@ -26,7 +38,5 @@ class SignupPage{
         `)
     }
 
-    render() {
-        this.container.innerHTML = this.staticHTML
-    }
+    
 }
