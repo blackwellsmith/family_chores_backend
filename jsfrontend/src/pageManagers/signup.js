@@ -9,11 +9,15 @@ class SignupPage extends PageManager{
   handleSubmit(e) {
     e.preventDefault()
     const inputs = Array.from(e.target.querySelectorAll('input'))
-    //const name = inputs[0].value
-    //const email = inputs[1].value
-    //const password = inputs[2].value
     const [name, email, password] = inputs.map(input => input.value)
-    console.log(name, email, password)
+    
+    const params = {
+      user: {
+        name, email, password
+      }
+    }
+    //console.log(params)
+    this.adapter.signup(params)
   }
     
 

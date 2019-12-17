@@ -4,7 +4,6 @@ class User < ApplicationRecord
   #devise :database_authenticatable, :registerable,
     #     :recoverable, :rememberable, :validatable
     has_many :chores, dependent: :destroy
-
   devise :database_authenticatable,
          :jwt_authenticatable,
          :registerable,

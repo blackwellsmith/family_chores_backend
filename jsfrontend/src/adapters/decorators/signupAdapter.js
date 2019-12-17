@@ -2,7 +2,8 @@ class SignupAdapter{
 
     constructor(baseAdapter) {
         this.baseAdapter = baseAdapter
-        this.baseUrl = this.baseAdapter.baseURL
+        this.baseURL = this.baseAdapter.baseURL
+
     }
 
     get token() {
@@ -10,18 +11,20 @@ class SignupAdapter{
     }
 
     get headers() {
+        console.log(this.baseAdapter.headers)
         return this.baseAdapter.headers
     }
 
     
 
-    async signup() {
-        const res = fetch(`${this.baseURL}/signup`, {
+    async signup(params) {
+        const res = await fetch(`${this.baseURL}/signup`, {
             method: "POST",
             headers: this.headers,
             body: JSON.stringify(params)
         })
         this.baseAdapter.checkStatus(res)
-        this.baseAdapter.token = res.headers.get('authorization').split(' ')[1]
+        this.baseAdapter.token = res.headers.get("authorization").split(' ')[1]
+        console.log(this.baseAdapter.token)
     }
 }
