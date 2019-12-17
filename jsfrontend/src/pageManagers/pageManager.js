@@ -13,6 +13,6 @@ class PageManager {
     render() {
         this.container.innerHTML = this.staticHTML
         this.initBindingsAndEventListeners()
-        this.fetchandRenderPageResources()
+        this.fetchAndRenderPageResources()
     }
 }

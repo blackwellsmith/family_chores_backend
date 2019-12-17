@@ -1,16 +1,17 @@
 class SignupPage extends PageManager{
 
     initBindingsAndEventListeners() {
-      this.form = this.container.querySelector('#sign-up')
+      this.form = this.container.querySelector('#signup-form')
       
       this.form.addEventListener('submit', this.handleSubmit.bind(this))
     }
   
   handleSubmit(e) {
-    const inputs = e.target.querySelectorAll('input')
-    const name = inputs[0].value
-    const email = inputs[1].value
-    const password = inputs[2].value
+    e.preventDefault()
+    const inputs = Array.from(e.target.querySelectorAll('input'))
+    //const name = inputs[0].value
+    //const email = inputs[1].value
+    //const password = inputs[2].value
     const [name, email, password] = inputs.map(input => input.value)
     console.log(name, email, password)
   }
@@ -19,7 +20,7 @@ class SignupPage extends PageManager{
     get staticHTML() {
         return (`
         <h2>Sign Up</h2>
-        <form>
+        <form id="signup-form">
         <div class="form-group">
           <label for="name">Name</label>
           <input type="name" class="form-control" id="name" placeholder="Name" required>
