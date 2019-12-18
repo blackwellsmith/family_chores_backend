@@ -16,7 +16,9 @@ class Navbar extends PageManager{
 
     handleClick(e) {
         if (e.target.tagName === "A") {
-           console.log(e.target)
+            e.preventDefault()
+            const route = e.target.id.split('-')[0] 
+            if (route != theCurrentPage) { this.redirect(route) }
        }
     }
 
@@ -32,7 +34,7 @@ class Navbar extends PageManager{
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" id="profile" href="#">Profile <span class="sr-only">(current)</span></a>
+        <a class="nav-link" id="profile-link" href="#">Profile <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" id="cleaning-links" href="#">Cleaning Tips</a>
@@ -55,13 +57,13 @@ class Navbar extends PageManager{
          <div class="collapse navbar-collapse" id="navbarSupportedContent">
            <ul class="navbar-nav mr-auto">
              <li class="nav-item active">
-               <a class="nav-link" id="welcome" href="#">Welcome <span class="sr-only">(current)</span></a>
+               <a class="nav-link" id="welcome-link" href="#">Welcome <span class="sr-only">(current)</span></a>
              </li>
              <li class="nav-item">
-               <a class="nav-link" id="login" href="#">Login </a>
+               <a class="nav-link" id="login-link" href="#">Login </a>
              </li>
              <li class="nav-item">
-               <a class="nav-link" id="signup" href="#">Signup</a>
+               <a class="nav-link" id="signup-link" href="#">Signup</a>
              </li>
            </ul> 
          </div>
