@@ -8,9 +8,9 @@ class App{
             'login': new LoginPage(this.pageContainer, this.adapter),
             'signup': new SignupPage(this.pageContainer, this.adapter)
         })
-        this.router.rootPage = 'welcome'
+        this.router.assignCallback(this.pageManagerRedirect.bind(this))
         this.renderPage('welcome')
-        )
+        
     }
 
     initBindingsAndEventListeners() {
@@ -20,9 +20,15 @@ class App{
         this.pageContainer = document.querySelector('#page-container')
     }
 
+    pageManagerRedirect(page) {
+        this.renderPage(page)
+    }
+
     renderPage(page) {
         this.router.render(page)
         
     }
+
+    
 
 }
