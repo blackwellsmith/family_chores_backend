@@ -5,18 +5,19 @@ class Alert{
     }
 
     stopAlert() {
-        this.clearTimeout(this.timeout)
+        clearTimeout(this.timeout)
+        this.container.innerHTML = ''
     }
 
-    render(msg, type) {
+    render(msg, type, timeout) {
         const html = ` 
         <div class="alert alert-${type}" role="alert">
           ${msg}
         </div>`
-
+        this.container.innerHTML = html
         this.timeout = setTimeout(() => {
-            this.container.innerHTML = html
-        }, 5000)
+            this.container.innerHTML = ''
+        }, timeout)
     }
 
 }

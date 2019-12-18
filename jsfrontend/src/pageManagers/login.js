@@ -27,7 +27,7 @@ class LoginPage extends PageManager{
         await this.adapter.login(params)
         this.redirect('profile')
       } catch(err){
-        alert(err)
+        this.handleAlert(err, 'danger')
        }
       }
 
