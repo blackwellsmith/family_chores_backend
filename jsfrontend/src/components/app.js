@@ -24,6 +24,10 @@ class App{
         this.pageContainer = document.querySelector('#page-container')
     }
 
+    handleNotifications(msg, type) {
+        
+    }
+
     pageManagerRedirect(page) {
         this.renderPage(page)
     }
