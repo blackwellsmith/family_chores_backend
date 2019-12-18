@@ -17,8 +17,12 @@ class Navbar extends PageManager{
     handleClick(e) {
         if (e.target.tagName === "A") {
             e.preventDefault()
-            const route = e.target.id.split('-')[0] 
-            if (route != this.currentPage()) { this.redirect(route) }
+            if (e.target.id != 'logout-link') {
+                const route = e.target.id.split('-')[0]
+                if (route != this.currentPage()) { this.redirect(route) }
+            } else {
+                this.adapter.token = null
+            }
        }
     }
 
@@ -41,6 +45,9 @@ class Navbar extends PageManager{
       </li>
       <li class="nav-item">
         <a class="nav-link" id="life-link" href="#">Enjoy Life</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="logout-link" href="#">Logout </a>
       </li>
     </ul> 
   </div>
@@ -65,6 +72,7 @@ class Navbar extends PageManager{
              <li class="nav-item">
                <a class="nav-link" id="signup-link" href="#">Signup</a>
              </li>
+             
            </ul> 
          </div>
        </nav>
