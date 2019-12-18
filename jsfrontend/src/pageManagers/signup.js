@@ -1,5 +1,10 @@
 class SignupPage extends PageManager{
 
+  constructor(container, adapter) {
+    super(container)
+    this.adapter = new SignupAdapter(adapter)
+    }
+
     initBindingsAndEventListeners() {
       this.form = this.container.querySelector('#signup-form')
       
