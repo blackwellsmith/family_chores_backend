@@ -32,7 +32,7 @@ class Navbar extends PageManager{
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" id="profile-link" href="#">Profile <span class="sr-only">(current)</span></a>
+        <a class="nav-link" id="profile" href="#">Profile <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" id="cleaning-links" href="#">Cleaning Tips</a>
@@ -55,13 +55,13 @@ class Navbar extends PageManager{
          <div class="collapse navbar-collapse" id="navbarSupportedContent">
            <ul class="navbar-nav mr-auto">
              <li class="nav-item active">
-               <a class="nav-link" id="welcome-link" href="#">Welcome <span class="sr-only">(current)</span></a>
+               <a class="nav-link" id="welcome" href="#">Welcome <span class="sr-only">(current)</span></a>
              </li>
              <li class="nav-item">
-               <a class="nav-link" id="login-link" href="#">Login </a>
+               <a class="nav-link" id="login" href="#">Login </a>
              </li>
              <li class="nav-item">
-               <a class="nav-link" id="signup-link" href="#">Signup</a>
+               <a class="nav-link" id="signup" href="#">Signup</a>
              </li>
            </ul> 
          </div>
