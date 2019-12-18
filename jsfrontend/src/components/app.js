@@ -8,6 +8,7 @@ class App{
             'login': new LoginPage(this.pageContainer, this.adapter),
             'signup': new SignupPage(this.pageContainer, this.adapter),
             'profile': new ProfilePage(this.pageContainer, this.adapter)
+            
         })
         const navbar = new Navbar(this.navbarContainer, this.adapter)
         this.router.assignNavbar(navbar) 

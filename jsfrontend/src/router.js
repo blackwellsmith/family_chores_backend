@@ -1,12 +1,6 @@
 class Router{
     constructor(kvpairs) {
         this.routes = kvpairs
-        this.navbar = this.routes['navbar']
-        for (let route in this.routes) {
-            this.routes[route].currentPage = () => {
-                this.currentPage
-            }
-        }
     }
 
     set rootPage(rootPageKey) {
@@ -26,5 +20,11 @@ class Router{
         if(this.navbar){ this.navbar.redirect = callback }
     }
 
-    
+    assignNavbar(navbar) {
+        this.navbar = navbar
+        this.navbar.currentPage = () => {
+            return this.currentPage
+        }
+
+    }
 }

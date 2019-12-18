@@ -18,7 +18,7 @@ class Navbar extends PageManager{
         if (e.target.tagName === "A") {
             e.preventDefault()
             const route = e.target.id.split('-')[0] 
-            if (route != theCurrentPage) { this.redirect(route) }
+            if (route != this.currentPage()) { this.redirect(route) }
        }
     }
 
