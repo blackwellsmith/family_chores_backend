@@ -11,7 +11,7 @@ class Router{
         this.routes[page].render()
     }
 
-    assignCallback(callBack) {
+    assignCallback(callback) {
         for (let route in this.routes) {
            this.routes[route].redirect  = callback
        } 
