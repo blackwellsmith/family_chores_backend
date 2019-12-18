@@ -11,7 +11,7 @@ class SignupAdapter{
     }
 
     get headers() {
-        console.log(this.baseAdapter.headers)
+        
         return this.baseAdapter.headers
     }
 

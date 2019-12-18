@@ -1,8 +1,8 @@
 class SignupPage extends PageManager{
 
-  constructor(container, adapter) {
-    super(container)
-    this.adapter = new SignupAdapter(adapter)
+    constructor(container, adapter) {
+      super(container)
+      this.adapter = new SignupAdapter(adapter)
     }
 
     initBindingsAndEventListeners() {
@@ -11,7 +11,7 @@ class SignupPage extends PageManager{
       this.form.addEventListener('submit', this.handleSubmit.bind(this))
     }
   
-  handleSubmit(e) {
+  async handleSubmit(e) {
     e.preventDefault()
     const inputs = Array.from(e.target.querySelectorAll('input'))
     const [name, email, password] = inputs.map(input => input.value)
@@ -21,8 +21,12 @@ class SignupPage extends PageManager{
         name, email, password
       }
     }
-    //console.log(params)
-    this.adapter.signup(params)
+    try {
+      await this.adapter.signup(params)
+      this.redirect('welcome')
+    } catch(err){
+      alert(err)
+    }
   }
     
 
