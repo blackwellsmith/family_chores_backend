@@ -12,24 +12,22 @@ class LoginPage extends PageManager{
         this.form.addEventListener('submit', this.handleSubmit.bind(this))
     }
     
-    async handleSubmit(e) {
-        e.preventDefault()
-        const inputs = Array.from(e.target.querySelectorAll('input'))
-        const [email, password] = inputs.map(input => input.value)
+  async handleSubmit(e) {
+    e.preventDefault()
+    const inputs = Array.from(e.target.querySelectorAll('input'))
+    const [email, password] = inputs.map(input => input.value)
         
-        const params = {
-          user: {
-             email, password
-          }
-        }
-      
-      try {
-        await this.adapter.login(params)
-        this.redirect('profile')
-      } catch(err){
-        this.handleAlert(err, 'danger')
-       }
-      }
+    const params = {
+      user: { email, password }
+    }
+    try {
+      await this.adapter.login(params)
+      this.redirect('profile')
+    } catch (err) {
+      //this.handleAlert(err, 'danger')
+      this.handleError(err)
+    }
+  }
 
     get staticHTML() {
         return (`

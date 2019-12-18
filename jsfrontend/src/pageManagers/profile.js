@@ -8,10 +8,15 @@ class ProfilePage extends PageManager{
     initBindingsAndEventListeners() {
         return null
     }
-
+    async fetchAndRenderPageResources() {
+        const chores = await this.adapter.getChores()
+        this.container.innerHTML = chores.map(c => c.name).join('')
+    }
     get staticHTML() {
         return (`
         <h1>You are Legendary!</h1>
         `)
     }
+
+    
 }

@@ -21,7 +21,10 @@ class Navbar extends PageManager{
                 const route = e.target.id.split('-')[0]
                 if (route != this.currentPage()) { this.redirect(route) }
             } else {
-                this.adapter.token = null
+              
+              this.adapter.token = null
+              this.redirect('welcome')
+              
             }
        }
     }

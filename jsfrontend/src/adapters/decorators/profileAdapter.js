@@ -11,8 +11,23 @@ class ProfileAdapter{
         return this.baseAdapter.token
     }
 
+    set token(arg) {
+        
+        this.baseAdapter.token = arg
+        return this.baseAdapter.token
+       
+    }
+
     get headers() {
         
         return this.baseAdapter.headers
+    }
+
+    async getChores() {
+        const res = await fetch(`${this.baseURL}/chores`,{
+           headers: this.headers
+        }) 
+        this.baseAdapter.checkStatus(res)
+        return await res.json()
     }
 }

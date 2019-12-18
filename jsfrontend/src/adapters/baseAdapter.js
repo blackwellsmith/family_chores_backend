@@ -16,21 +16,12 @@ class BaseAdapter{
     }
 
     async checkStatus(res) {
-        if(res.status === 401){
-            this.token = null
-            throw {
-                type: 'Authorization Error',
-                msg: 'You are no longer authenticated'
-            }
-     }else if (res.status < 200 || res.status > 299) {
+         if (res.status < 200 || res.status > 299) {
             const msg = await res.json()
-            let errorMsg = msg.error
+            let errorMsg = msg.error 
             if(!errorMsg){errorMsg = msg.errors.detail }
             //throw new Error(errorMsg )
-            throw {
-                type: "Fetch Error ",
-                msg: errorMsg
-            }
+            throw new Error(errorMsg)
         }
     }
 }
