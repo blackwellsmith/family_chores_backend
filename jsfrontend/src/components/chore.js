@@ -1,5 +1,8 @@
 class Chore{
     constructor(chore) {
-        console.log(chore)
+        const { id, name, notes } = chore
+        this.id = id
+        this.name = name
+        this.notes = notes
     }
 }
