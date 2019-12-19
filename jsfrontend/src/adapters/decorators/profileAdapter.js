@@ -32,7 +32,7 @@ class ProfileAdapter{
     }
 
     async getUsers() {
-        const res = await fetch(`${this.baseURL}/users`,{
+        const res = await fetch(`${this.baseURL}/profile`,{
            headers: this.headers
         }) 
         this.baseAdapter.checkStatus(res)
