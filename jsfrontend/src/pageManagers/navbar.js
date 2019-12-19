@@ -47,7 +47,7 @@ class Navbar extends PageManager{
         <a class="nav-link" id="cleaning-links" href="#">Cleaning Tips</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" id="life-link" href="#">Enjoy Life</a>
+        <a class="nav-link" id="life-link" href="#">Enjoying Life</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" id="logout-link" href="#">Logout </a>

@@ -9,7 +9,8 @@ class App{
             'login': new LoginPage(this.pageContainer, this.adapter),
             'signup': new SignupPage(this.pageContainer, this.adapter),
             'profile': new ProfilePage(this.pageContainer, this.adapter),
-            'cleaning': new CleaningTipsPage(this.pageContainer, this.adapter)
+            'cleaning': new CleaningTipsPage(this.pageContainer, this.adapter),
+            'life': new EnjoyingLifePage(this.pageContainer, this.adapter)
             
         })
         const navbar = new Navbar(this.navbarContainer, this.adapter)

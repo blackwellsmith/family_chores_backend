@@ -9,6 +9,11 @@ class ProfilePage extends PageManager{
     initBindingsAndEventListeners() {
         return null
     }
+
+    finalBindingsAndEventListeners() {
+        const choreList = this.container.querySelector('ul')
+        //choreList.addEventListener('dblclick', this.deleteChoreclick.bind(this))
+    }
     async fetchAndRenderPageResources() {
         try {
             const userObj = await this.adapter.getUser()
@@ -20,12 +25,13 @@ class ProfilePage extends PageManager{
     }
     get staticHTML() {
         return (`
-        <div class="spin"></div>
+        <div class="loader"></div>
         `)
     }
 
     renderOwner() {
         this.container.innerHTML = this.user.profileHTML
+        //finalBindingsAndEventListeners()
     }
 
     
