@@ -13,9 +13,11 @@ class ProfilePage extends PageManager{
     }
 
     finalBindingsAndEventListeners() {
+        const choreList = this.container.querySelector('UL')
         this.form = this.container.querySelector('#chore-form')
-       
+        choreList.addEventListener('dblclick', this.handleChoreDelete.bind(this))
         this.form.addEventListener('submit', this.handleNewChoreSubmit.bind(this))
+
       
     }
 
