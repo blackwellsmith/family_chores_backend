@@ -21,8 +21,11 @@ class WelcomePage extends PageManager{
 
     get staticHTML() {
         return (`
+        <div>
+        <br>
         <h1>Welcome to The Legendary Chores Anti-Procrastanator App!</h1>
         <h3>Please <a href="#" id="signup">Signup</a> or <a href="#" id="login">Login</a></h3>
+        </div>
         `)
    }
 }

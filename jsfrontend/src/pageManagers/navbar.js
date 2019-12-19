@@ -75,7 +75,6 @@ class Navbar extends PageManager{
              <li class="nav-item">
                <a class="nav-link" id="signup-link" href="#">Signup</a>
              </li>
-             
            </ul> 
          </div>
        </nav>

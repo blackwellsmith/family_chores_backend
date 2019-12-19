@@ -1,0 +1,9 @@
+html, body, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Sacramento', cursive;
+    font-weight: 600;
+  }
+
+  body { background-color: beige;
+    background-image: radial-gradient(rgba(184, 255, 113, 0.993) 9px, transparent 10px),
+     repeating-radial-gradient(pink, pink 4px, transparent 5px, transparent 20px, pink 21px, pink 25px, transparent 26px, transparent 50px)
+     ; background-size: 30px 30px, 90px 90px; background-position: 0 0; }

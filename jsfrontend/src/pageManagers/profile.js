@@ -9,8 +9,12 @@ class ProfilePage extends PageManager{
         return null
     }
     async fetchAndRenderPageResources() {
-        const chores = await this.adapter.getChores()
-        this.container.innerHTML = chores.map(c => c.name).join('')
+        try {
+            const chores = await this.adapter.getChores()
+            this.container.innerHTML = chores.map(c => c.name).join(' ')
+        } catch (err) {
+            this.handleError(err)
+        }
     }
     get staticHTML() {
         return (`
