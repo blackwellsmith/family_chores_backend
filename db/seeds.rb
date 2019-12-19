@@ -9,5 +9,5 @@ User.destroy_all
 Chore.destroy_all
 
 b = User.create(name: 'Blackwell', email: 'blackwell@gmail.com', password: 'password')
-sweep = Chore.create(name: 'sweep', user: b)
-mop = Chore.create(name: 'mop', user: b)
+sweep = Chore.create(name: 'sweep', user: b, notes: "the whole floor")
+mop = Chore.create(name: 'mop', user: b, notes: "yes the bathroom")

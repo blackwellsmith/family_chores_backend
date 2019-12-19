@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 2019_12_16_135926) do
 
   create_table "chores", force: :cascade do |t|
     t.string "name"
+    t.text "notes"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
