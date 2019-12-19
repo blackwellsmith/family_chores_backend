@@ -21,6 +21,13 @@ class ProfilePage extends PageManager{
       
     }
 
+    handleNewChoreSubmit(e) {
+        if (e.target.tagname === "A") {
+            const choreId = e.target.dataset.id
+            console.log(choreId)
+        }
+    }
+
     async handleNewChoreSubmit(e) {
         e.preventDefault()
         console.log(e.target)
