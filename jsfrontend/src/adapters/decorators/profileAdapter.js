@@ -30,4 +30,12 @@ class ProfileAdapter{
         this.baseAdapter.checkStatus(res)
         return await res.json()
     }
+
+    async getUsers() {
+        const res = await fetch(`${this.baseURL}/users`,{
+           headers: this.headers
+        }) 
+        this.baseAdapter.checkStatus(res)
+        return await res.json()
+    }
 }
