@@ -4,6 +4,10 @@ class PageManager {
         this.container = container
     }
 
+    initBindingsAndEventListeners() {
+        return null
+    }
+
     fetchAndRenderPageResources() {
         return null
     }

@@ -13,8 +13,8 @@ class ChoresController < ApplicationController
     end
 
     def create
-        chore = chore.new(chore_params)
-        chore.owner = current_user 
+        chore = Chore.new(chore_params)
+        chore.user = current_user 
         chore.save
         render_resource(chore)
     end

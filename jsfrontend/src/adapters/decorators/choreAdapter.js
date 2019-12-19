@@ -18,7 +18,7 @@ class ChoreAdapter{
     
 
     async newChore(params) {
-        const res = await fetch(`${this.baseURL}/chore`, {
+        const res = await fetch(`${this.baseURL}/chores`, {
             method: "POST",
             headers: this.headers,
             body: JSON.stringify(params)

@@ -15,11 +15,12 @@ class Navbar extends PageManager{
     }
 
     handleClick(e) {
-        if (e.target.tagName === "A") {
+      if (e.target.tagName === "A") {
+          console.log(e.target)
             e.preventDefault()
             if (e.target.id != 'logout-link') {
                 const route = e.target.id.split('-')[0]
-                if (route != this.currentPage()) { this.redirect(route) }
+                if (route != this.currentPage()) { this.redirect(route), console.log(route) }
             } else {
               
               this.adapter.token = null
@@ -43,8 +44,9 @@ class Navbar extends PageManager{
       <li class="nav-item active">
         <a class="nav-link" id="profile-link" href="#">Profile <span class="sr-only">(current)</span></a>
       </li>
+      
       <li class="nav-item">
-        <a class="nav-link" id="cleaning-links" href="#">Cleaning Tips</a>
+        <a class="nav-link" id="cleaning-link" href="#">Cleaning Tips</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" id="life-link" href="#">Enjoying Life</a>

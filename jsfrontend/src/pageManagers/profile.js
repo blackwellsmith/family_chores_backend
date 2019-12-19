@@ -3,35 +3,40 @@ class ProfilePage extends PageManager{
     constructor(container, adapter) {
         super(container)
         this.adapter = new ProfileAdapter(adapter)
-        //this.choreAdapter = new ChoreAdapter(adapter)
+        this.choreAdapter = new ChoreAdapter(adapter)
         this.user = null
     }
   
   
     initBindingsAndEventListeners() {
-      //this.form = this.container.querySelector('#chore')
+      return null
+    }
+
+    finalBindingsAndEventListeners() {
+        this.form = this.container.querySelector('#chore-form')
+       
+        this.form.addEventListener('submit', this.handleNewChoreSubmit.bind(this))
       
-      //this.form.addEventListener('submit', this.handleSubmit.bind(this))
     }
-  
-  async handleSubmit(e) {
-    e.preventDefault()
-    const inputs = Array.from(e.target.querySelectorAll('input'))
-    const [name, notes] = inputs.map(input => input.value)
-    
-    const params = {
-      user: {
-        name, notes
+
+    async handleNewChoreSubmit(e) {
+        e.preventDefault()
+        console.log(e.target)
+        const inputs = Array.from(e.target.querySelectorAll('input'))
+        const [name, notes] = inputs.map(input => input.value)
+        console.log(this.user)
+        const params = { chore: { name, notes } }
+        console.log(params)
+        try {
+          await this.choreAdapter.newChore(params)
+          this.redirect('profile')
+        } catch(err){
+          //this.handleAlert(err, 'Danger')
+          this.handleError(err)
+        }
       }
-    }
-    try {
-      await this.choreAdapter.newChore(params)
-      this.redirect('profile')
-    } catch(err){
-      //this.handleAlert(err, 'Danger')
-      this.handleError(err)
-    }
-  }
+  
+  
   
   async fetchAndRenderPageResources() {
       try {
@@ -52,7 +57,7 @@ class ProfilePage extends PageManager{
 
     renderOwner() {
         this.container.innerHTML = this.user.profileHTML
-        //finalBindingsAndEventListeners()
+        this.finalBindingsAndEventListeners()
     }
 
     
