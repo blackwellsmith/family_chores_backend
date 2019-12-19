@@ -4,6 +4,8 @@ html, body, h1, h2, h3, h4, h5, h6 {
     color: gray;
   }
 
+  
+
   ul li{
     font-size:30px;
    }
@@ -12,3 +14,19 @@ html, body, h1, h2, h3, h4, h5, h6 {
     background-image: radial-gradient(rgba(184, 255, 113, 0.993) 9px, transparent 10px),
      repeating-radial-gradient(pink, pink 4px, transparent 5px, transparent 20px, pink 21px, pink 25px, transparent 26px, transparent 50px)
      ; background-size: 30px 30px, 90px 90px; background-position: 0 0; }
+
+     .spin::before {
+      animation: 1.5s linear infinite spinner;
+      animation-play-state: inherit;
+      border: solid 5px #cfd0d1;
+      border-bottom-color: slateblue;
+      border-radius: 50%;
+      content: "";
+      height: 40px;
+      position: absolute;
+      top: 10%;
+      left: 10%;
+      transform: translate3d(-50%, -50%, 0);
+      width: 40px;
+      will-change: transform;
+      }

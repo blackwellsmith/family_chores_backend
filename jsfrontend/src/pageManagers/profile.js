@@ -20,7 +20,7 @@ class ProfilePage extends PageManager{
     }
     get staticHTML() {
         return (`
-        <h1>You are Legendary!</h1>
+        <div class="spin"></div>
         `)
     }
 
