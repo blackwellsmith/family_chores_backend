@@ -3,6 +3,7 @@ class ProfilePage extends PageManager{
     constructor(container, adapter) {
         super(container)
         this.adapter = new ProfileAdapter(adapter)
+        this.user = null
     }
 
     initBindingsAndEventListeners() {
@@ -11,7 +12,8 @@ class ProfilePage extends PageManager{
     async fetchAndRenderPageResources() {
         try {
             const userObj = await this.adapter.getUser()
-            const user = new User(userObj)
+            this.user = new User(userObj)
+            this.renderOwner()
         } catch (err) {
             this.handleError(err)
         }
@@ -20,6 +22,10 @@ class ProfilePage extends PageManager{
         return (`
         <h1>You are Legendary!</h1>
         `)
+    }
+
+    renderOwner() {
+        this.container.innerHTML = this.user.profileHTML
     }
 
     

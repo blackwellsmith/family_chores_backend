@@ -1,7 +1,12 @@
 html, body, h1, h2, h3, h4, h5, h6 {
     font-family: 'Sacramento', cursive;
     font-weight: 600;
+    color: gray;
   }
+
+  ul li{
+    font-size:30px;
+   }
 
   body { background-color: beige;
     background-image: radial-gradient(rgba(184, 255, 113, 0.993) 9px, transparent 10px),

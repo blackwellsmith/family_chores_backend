@@ -9,7 +9,14 @@ class User{
 
     get profileHTML() {
         return (`
-        <h1>Welcome ${this.name}</h1>
+        <div>
+        <br>
+        <h1>Welcome ${this.name}!</h1>
+        <h2>Looks like you have ${this.chores.length} chores left</h2>
+        <ul>
+          ${this.chores.map(c => c.liAndLinkHTML).join()}
+        </ul>
+        </div>
         `)
     }
 }

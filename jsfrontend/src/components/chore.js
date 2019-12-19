@@ -5,4 +5,8 @@ class Chore{
         this.name = name
         this.notes = notes
     }
+
+    get liAndLinkHTML() {
+       return `<li><a href="#" data-id="${this.id}">${this.name}</a> - notes: ${this.notes}</li>` 
+    }
 }
