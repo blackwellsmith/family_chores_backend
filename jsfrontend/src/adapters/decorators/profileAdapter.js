@@ -23,15 +23,9 @@ class ProfileAdapter{
         return this.baseAdapter.headers
     }
 
-    async getChores() {
-        const res = await fetch(`${this.baseURL}/chores`,{
-           headers: this.headers
-        }) 
-        this.baseAdapter.checkStatus(res)
-        return await res.json()
-    }
+    
 
-    async getUsers() {
+    async getUser() {
         const res = await fetch(`${this.baseURL}/profile`,{
            headers: this.headers
         }) 
