@@ -14,7 +14,7 @@ class User{
         <h1>Welcome ${this.name}!</h1>
         <br>
         <h2>Looks like you have ${this.chores.length} chores left</h2>
-        <h2 id="highlight">!!To Delete Chores Just Double Click On It!!</h2>
+        <br>
         <ul id="chores-container">
           ${this.chores.map(c => c.liAndLinkHTML).join()}
         </ul>

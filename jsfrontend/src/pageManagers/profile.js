@@ -13,19 +13,20 @@ class ProfilePage extends PageManager{
     }
 
     finalBindingsAndEventListeners() {
-        const choreList = this.container.querySelector('UL')
+        this.choresContainer = document.getElementById('chores-container')
         this.form = this.container.querySelector('#chore-form')
-        choreList.addEventListener('dblclick', this.handleChoreDelete.bind(this))
+        this.choresContainer.addEventListener('click', this.handleChoreDelete.bind(this))
         this.form.addEventListener('submit', this.handleNewChoreSubmit.bind(this))
 
       
     }
 
-    handleNewChoreSubmit(e) {
-        if (e.target.tagname === "A") {
-            const choreId = e.target.dataset.id
-            console.log(choreId)
-        }
+    handleChoreDelete(e) {
+        const li = e.target.parentNode
+        const choreId = e.target.dataset.id
+        console.log(choreId)
+        if (e.target.nodeName === "A") { this.choreAdapter.deleteChore(choreId) }
+        this.redirect('profile')
     }
 
     async handleNewChoreSubmit(e) {
