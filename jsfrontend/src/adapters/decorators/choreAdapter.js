@@ -28,4 +28,11 @@ class ChoreAdapter{
         //this.baseAdapter.token = res.headers.get("authorization").split(' ')[1]
        
     }
+
+    deleteChore(id) {
+         return fetch(`${this.baseURL}/chores/${id}`, {
+             method: 'DELETE',
+             headers: this.headers,
+         })
+    }
 }

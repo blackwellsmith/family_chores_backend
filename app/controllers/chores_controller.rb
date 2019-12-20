@@ -28,8 +28,8 @@ class ChoresController < ApplicationController
 
     def destroy
         chore = Chore.find(params[:id])
-        authorize_user_resource(chore)
-        chore.destroy
+        #authorize_user_resource(chore)
+        chore.delete
         render_resource(chore)
     end
 

@@ -39,7 +39,7 @@ class App{
     }
 
     renderPage(page) {
-        console.log(page)
+        //console.log(page)
         this.router.render(page)
         
     }
