@@ -16,7 +16,7 @@ class ProfilePage extends PageManager{
         this.choresContainer = document.getElementById('chores-container')
         this.form = this.container.querySelector('#chore-form')
         this.choresContainer.addEventListener('click', this.handleChoreDelete.bind(this))
-        this.form.addEventListener('submit', this.handleNewChoreSubmit.bind(this))
+        this.form.addEventListener('submit', this.handleNewChoreSubmit.bind(this), console.log(this.form))
 
       
     }
@@ -32,11 +32,14 @@ class ProfilePage extends PageManager{
 
     async handleNewChoreSubmit(e) {
         e.preventDefault()
-        //console.log(e.target)
+        console.log(e.target)
         const inputs = Array.from(e.target.querySelectorAll('input'))
+        const select = e.target.querySelectorAll('select')
+        const priority = select[0].value
+        //console.log(p)
         const [name, notes] = inputs.map(input => input.value)
         //console.log(this.user)
-        const params = { chore: { name, notes } }
+        const params = { chore: { name, notes, priority } }
         console.log(params)
         try {
           await this.choreAdapter.newChore(params)

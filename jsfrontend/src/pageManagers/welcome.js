@@ -23,7 +23,7 @@ class WelcomePage extends PageManager{
         return (`
         <div>
         <br>
-        <h1>❈Welcome to The Legendary Anti-Procrastanator❈</h1>
+        <h1>❈Welcome to The Legendary Anti-Procrastinator❈</h1>
         <h3>Please <a href="#" id="signup">Signup</a> or <a href="#" id="login">Login</a></h3>
         </div>
         `)
