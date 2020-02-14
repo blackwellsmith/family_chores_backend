@@ -31,4 +31,4 @@ production:
   <<: *default
   database: family_chores_backend_production
   username: legendary-anti-procrastinator
-  password: bob
+  password: <%= ENV["DEVISE_JWT_SECRET_KEY"] %>
