@@ -10,9 +10,5 @@ class RegistrationsController < Devise::RegistrationsController
             err = OpenStruct.new(errors: { detail: 'User Already Exists' })
             validation_error(err)
         end
-      #build_resource(sign_up_params)
-  
-      #resource.save
-      #render_resource(resource)
     end
   end
